@@ -115,7 +115,7 @@ for q_idx = 1:num_q
     fprintf('Quantile: %.2f | Profitto medio: %.2f\n', current_q, risultati_profitto(q_idx));
 end
 
-% Identificazione del Migliore e del Peggiore 
+% Identificazione del risultato migliore e peggiore 
 [max_profit, best_idx] = max(risultati_profitto);
 [min_profit, worst_idx] = min(risultati_profitto);
 

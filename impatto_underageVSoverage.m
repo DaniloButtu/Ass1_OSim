@@ -79,7 +79,6 @@ for n_idx = 1:length(N_values)
     for c_idx = 1:length(co_values)
         co = co_values(c_idx);
         s = c - co;
-        if s < 0, s = 0; co = c; end
         
         Q_opt_true = optimal_quantity(mu_true, sigma_true, cu, co);
         EP_opt_true = expected_profit(Q_opt_true, mu_true, sigma_true, p, c, s);
@@ -135,7 +134,6 @@ xlabel('r = c_u / c_o');
 ylabel('N');
 title('Heatmap del rapporto profitto medio');
 colorbar;
-% Imposta tick logaritmici per l'asse x (approssimati)
 xticks = [0.5, 1, 2, 5, 10];
 xticklabels = arrayfun(@num2str, xticks, 'UniformOutput', false);
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
